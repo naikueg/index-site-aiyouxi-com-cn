@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澳门六合彩 · 简明指南与访问提醒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f3f0;
+            color: #2b2b2b;
+            line-height: 1.65;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0d1b2a 0%, #1b2d45 100%);
+            padding: 4.5rem 2rem 4rem;
+            text-align: center;
+            color: #e6e9ed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: #f5f3f0;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            font-weight: 600;
+            color: #f0c27a;
+        }
+
+        .hero p {
+            max-width: 620px;
+            margin: 0 auto 1.4rem;
+            font-size: 1.1rem;
+            opacity: 0.88;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: rgba(240, 194, 122, 0.18);
+            color: #f0c27a;
+            border: 1px solid rgba(240, 194, 122, 0.3);
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* 浅色正文区 */
+        .content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.6rem 1.8rem 3.5rem;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1.4rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #d9c8b0;
+            color: #2b3a4a;
+            letter-spacing: 1px;
+        }
+
+        .section-sub {
+            font-size: 1rem;
+            color: #4f5b66;
+            margin-top: -0.6rem;
+            margin-bottom: 1.8rem;
+        }
+
+        /* 优势卡 */
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.8rem;
+            margin: 2.2rem 0 2.8rem;
+        }
+
+        .advantage-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.8rem 1.4rem;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+            transition: all 0.2s ease;
+            border: 1px solid #ede6de;
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+            border-color: #dcc9b4;
+        }
+
+        .advantage-card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #1f2d3a;
+            margin-bottom: 0.6rem;
+        }
+
+        .advantage-card p {
+            font-size: 0.95rem;
+            color: #535e68;
+        }
+
+        .advantage-card .icon {
+            font-size: 1.8rem;
+            display: inline-block;
+            margin-bottom: 0.4rem;
+        }
+
+        /* 说明区 */
+        .guide-section {
+            background: #ffffffd9;
+            backdrop-filter: blur(2px);
+            padding: 2rem 2rem 2.2rem;
+            border-radius: 28px;
+            margin: 2.4rem 0 2.8rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #ede3d8;
+        }
+
+        .guide-section p {
+            margin-bottom: 1.2rem;
+            font-size: 1.02rem;
+        }
+
+        .guide-section strong {
+            color: #1b3b4f;
+        }
+
+        .highlight-link {
+            color: #b0652c;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px solid #dbb594;
+            transition: border 0.2s, color 0.2s;
+        }
+
+        .highlight-link:hover {
+            color: #904e1e;
+            border-bottom-color: #904e1e;
+        }
+
+        /* FAQ摘要 */
+        .faq-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.6rem;
+            margin: 2.2rem 0 2.6rem;
+        }
+
+        .faq-item {
+            background: #faf8f5;
+            padding: 1.2rem 1.4rem;
+            border-radius: 18px;
+            border-left: 5px solid #c7b19b;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            color: #1f2d3a;
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .faq-item .a {
+            color: #4f5e6d;
+            font-size: 0.95rem;
+        }
+
+        /* 底部 */
+        .footer-links {
+            margin-top: 3.5rem;
+            padding: 1.6rem 0 0.8rem;
+            border-top: 1px solid #ddd0c0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #5f6b78;
+        }
+
+        .footer-links a {
+            color: #7a634f;
+            text-decoration: none;
+            margin-right: 1.2rem;
+            transition: color 0.15s;
+        }
+
+        .footer-links a:hover {
+            color: #b0652c;
+        }
+
+        .footer-links .copy {
+            color: #7f8c8d;
+            font-size: 0.85rem;
+        }
+
+        .btn-soft {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid #b7a18d;
+            color: #3d4c5a;
+            padding: 0.4rem 1.4rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.15s;
+        }
+
+        .btn-soft:hover {
+            background: #ede1d4;
+            border-color: #9a826e;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero {
+                padding: 3rem 1.2rem 2.8rem;
+            }
+            .content {
+                padding: 1.6rem 1rem 2.4rem;
+            }
+            .guide-section {
+                padding: 1.4rem;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="badge">简明指南 · 轻触即可了解</div>
+        <h1><span>澳门六合彩</span><br>从新手到熟悉的一页指引</h1>
+        <p>无论你是初次接触，还是想温习基础规则，这里提供清晰、温和的说明。保持理性节奏，轻松掌握要点。</p>
+    </section>
+
+    <!-- 内容区 -->
+    <main class="content">
+
+        <!-- 优势区 -->
+        <h2 class="section-title">为什么从这里开始？</h2>
+        <p class="section-sub">清晰的结构、平实的语言、务实的提醒</p>
+        <div class="advantages">
+            <div class="advantage-card">
+                <div class="icon">📘</div>
+                <h3>规则一目了然</h3>
+                <p>玩法、选号、奖项层次——拆解成简单明快的要点，不必反复琢磨。</p>
+            </div>
+            <div class="advantage-card">
+                <div class="icon">🔎</div>
+                <h3>常见疑问速览</h3>
+                <p>收录多数人最先关心的几个问题，节省搜索和猜测的时间。</p>
+            </div>
+            <div class="advantage-card">
+                <div class="icon">🧭</div>
+                <h3>访问提醒温和</h3>
+                <p>提供实用的浏览建议，帮助你在信息环境中保持自己的节奏。</p>
+            </div>
+            <div class="advantage-card">
+                <div class="icon">🌿</div>
+                <h3>平实无压力</h3>
+                <p>没有浮夸渲染，只有真诚的梳理和适度的引导，让你自在阅读。</p>
+            </div>
+        </div>
+
+        <!-- 说明区 + 嵌入链接 -->
+        <div class="guide-section">
+            <h2 style="font-weight: 500; font-size: 1.4rem; margin-bottom: 1rem; color: #1f2d3a;">📌 简明指南：从认识开始</h2>
+            <p><strong>澳门六合彩</strong> 是一种以数字为基础的娱乐游戏，核心在于从 1–49 个号码中选取若干数字，并根据开出的号码组合判断是否中奖。它的流程清晰，每一期的开奖结果公开透明，参与者可以自行核对。</p>
+            <p>如果你希望系统了解具体玩法、选号方式以及不同奖项的对应规则，可以直接参考 <a href="https://official-macaujc.com" class="highlight-link">澳门六合彩</a> 的说明页面。那里有更完整的分类介绍和常见案例，适合慢慢翻阅。</p>
+            <p>我们建议初次接触的朋友先花几分钟熟悉基本术语（如“特码”、“正码”、“连码”），这样在看任何介绍时都会更顺畅。不用急于一次全记住，边看边理解是最舒服的方式。</p>
+            <p>另外，请记得任何形式的参与都应建立在<strong>个人意愿和理性判断</strong>之上。了解规则、设定边界、保持轻松心态，才能让整个过程更从容。</p>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <h2 class="section-title">❓ 常见疑问摘要</h2>
+        <p class="section-sub">几个最常被问到的点，快速扫一眼</p>
+        <div class="faq-summary">
+            <div class="faq-item">
+                <div class="q">🎲 每期开几个号码？</div>
+                <div class="a">通常每期开出 6 个正码及 1 个特码，共 7 个号码。具体以当期公告为准。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">📅 什么时候开奖？</div>
+                <div class="a">一般固定时间进行，每周多次。最新时刻表可在相关页面查询。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">🧾 如何核对是否中奖？</div>
+                <div class="a">根据你选择的玩法（如特码、二连、三连等），对照开奖号码组合即可。多数渠道会提供自动对奖工具。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">🛡️ 有什么注意事项？</div>
+                <div class="a">合理安排时间与投入，不沉迷、不追号。了解规则后再参与，保持轻松心态。</div>
+            </div>
+        </div>
+        <p style="font-size: 0.95rem; color: #5f6b78; margin-top: -0.8rem;">更多细节和解释，可以前往 <a href="https://official-macaujc.com" class="highlight-link">澳门六合彩</a> 页面做进一步了解。</p>
+
+        <!-- 底部链接 -->
+        <div class="footer-links">
+            <div>
+                <a href="https://official-macaujc.com" class="btn-soft">澳门六合彩</a>
+                <span style="margin: 0 0.6rem; color: #c0b09e;">·</span>
+                <a href="#">阅读指南</a>
+                <a href="#">常见问题</a>
+                <a href="#">理性提醒</a>
+            </div>
+            <span class="copy">温和指引 · 自主了解</span>
+        </div>
+    </main>
+</body>
+</html>
