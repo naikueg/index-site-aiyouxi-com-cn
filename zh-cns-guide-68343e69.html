@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mk体育 · 运动场景与人群指南</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #f5f2ed;
+            font-family: 'Georgia', 'Times New Roman', '宋体', SimSun, serif;
+            color: #2e2b28;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+        }
+        .page {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #fcfaf7;
+            padding: 2.8rem 2.2rem;
+            border-radius: 24px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+        }
+        /* hero 主视觉 */
+        .hero {
+            text-align: center;
+            margin-bottom: 3.2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed #dcd5cb;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #3a322c;
+            margin-bottom: 0.3rem;
+        }
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #7a7068;
+            border-top: 1px solid #ded7cf;
+            display: inline-block;
+            padding-top: 0.5rem;
+            margin-top: 0.3rem;
+        }
+        .hero .visual-tag {
+            margin-top: 1rem;
+            display: inline-block;
+            background: #eae2d8;
+            padding: 0.2rem 1.6rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: #5c524a;
+            letter-spacing: 1px;
+        }
+
+        /* 卡片区域 */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin: 2.6rem 0 2rem 0;
+        }
+        .card {
+            background: #ffffffec;
+            border-radius: 18px;
+            padding: 1.8rem 1.6rem 1.6rem 1.6rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #ece6df;
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #dacfc4;
+            display: inline-block;
+            color: #3f3730;
+        }
+        .card p {
+            font-size: 0.98rem;
+            color: #46403b;
+        }
+        .card ul {
+            list-style: none;
+            margin-top: 0.6rem;
+        }
+        .card li {
+            padding: 0.2rem 0;
+            font-size: 0.96rem;
+            color: #4a433e;
+        }
+        .card li::before {
+            content: "·";
+            margin-right: 6px;
+            color: #b3a69b;
+        }
+
+        /* 适合人群卡片特殊处理 */
+        .card.audience {
+            background: #f8f3ec;
+            border: 1px solid #e2d9ce;
+        }
+
+        /* 自然链接段落 + 引用块 */
+        .content-note {
+            margin: 2.2rem 0 1.8rem 0;
+            padding: 1.5rem 2rem;
+            background: #f3efe8;
+            border-left: 5px solid #b9aa9a;
+            border-radius: 0 14px 14px 0;
+            font-style: normal;
+        }
+        .content-note p {
+            margin-bottom: 0.6rem;
+            font-size: 1.02rem;
+        }
+        .content-note a {
+            color: #4f6b5c;
+            font-weight: 400;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #c2b5a8;
+        }
+        .content-note a:hover {
+            color: #1f3a2d;
+            text-decoration-color: #7a6657;
+        }
+        .inline-link {
+            color: #4f6b5c;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #cbbcb0;
+        }
+        .inline-link:hover {
+            color: #1f3a2d;
+        }
+
+        .faq-summary {
+            margin: 2rem 0 0.6rem 0;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e5ddd3;
+        }
+        .faq-summary details {
+            margin: 0.6rem 0;
+            padding-left: 0.4rem;
+        }
+        .faq-summary summary {
+            cursor: pointer;
+            font-weight: 500;
+            color: #3f3730;
+            padding: 0.3rem 0;
+        }
+        .faq-summary details p {
+            margin: 0.3rem 0 0.5rem 0.6rem;
+            color: #4f4842;
+            font-size: 0.95rem;
+        }
+        .foot-note {
+            margin-top: 2.6rem;
+            text-align: center;
+            color: #8c8177;
+            font-size: 0.85rem;
+            border-top: 1px solid #e8dfd6;
+            padding-top: 1.8rem;
+        }
+
+        /* 响应 */
+        @media (max-width: 650px) {
+            .page { padding: 1.8rem 1.2rem; }
+            .hero h1 { font-size: 2rem; }
+            .cards-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+            .content-note { padding: 1.2rem 1.2rem; }
+        }
+        @media (max-width: 480px) {
+            body { padding: 1rem 0.8rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .card { padding: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 主视觉 hero -->
+    <div class="hero">
+        <h1>mk体育</h1>
+        <div class="sub">运动不止一种方式</div>
+        <div class="visual-tag">内容 · 场景 · 人群</div>
+    </div>
+
+    <!-- 信息卡片：用途卡片 + 适合人群 -->
+    <div class="cards-grid">
+        <!-- 用途卡片：运动场景 -->
+        <div class="card">
+            <h3>日常运动场景</h3>
+            <p>从晨间慢跑到傍晚的篮球局，从瑜伽垫到登山步道——这些场景构成了许多人生活里的节奏。体育不必总在聚光灯下，它更多时候出现在通勤前的拉伸、午休时的散步，或者周末与朋友的一次球类对抗。在 <a href="https://zh-cns-sports.com" class="inline-link">mk体育</a> 所触及的内容里，运动场景的颗粒度是细碎的，也是真实的。</p>
+            <ul>
+                <li>社区健身路径与公园跑道</li>
+                <li>室内小场地球类活动</li>
+                <li>轻量居家力量训练</li>
+                <li>户外徒步与骑行</li>
+            </ul>
+        </div>
+        <!-- 适合人群卡片 -->
+        <div class="card audience">
+            <h3>适合怎样的你</h3>
+            <p>不论你是刚开始寻找运动习惯的初学者，还是已经维持着固定节奏的爱好者，都可以从不同的运动信息里找到参照。体育的魅力在于它的包容——没有统一的标准，只有适合自己当下的状态。</p>
+            <ul>
+                <li>想尝试运动但不知从何入手的人</li>
+                <li>已有运动习惯，希望拓宽视野的练习者</li>
+                <li>喜欢阅读运动故事与实用内容的读者</li>
+                <li>偶尔运动、但保持关注的朋友</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 自然链接段落 + 引用块 / 提示框风格 -->
+    <div class="content-note">
+        <p>“运动是一种语言，它不要求你词汇丰富，只要你在场。” 这句话或许能概括许多人对体育的感受。在各类体育信息和内容的梳理中，<a href="https://zh-cns-sports.com">mk体育</a> 选择从日常话题出发——不渲染竞技的极端，也不轻视任何微小的起步。无论是赛事资讯、运动入门，还是不同项目的背景，都值得被平实地呈现。</p>
+        <p style="margin-top: 0.5rem;">如果你正站在运动场边缘，或者已经跑过很长一段路，这里都有你可以停下来的段落。</p>
+    </div>
+
+    <!-- FAQ 摘要  -->
+    <div class="faq-summary">
+        <details>
+            <summary>关于 mk体育，可以了解什么？</summary>
+            <p>网站围绕体育相关内容组织，涉及项目科普、运动场景解析、以及面向不同人群的参考信息。不刻意制造焦虑，也不夸大任何效果，只是提供一种平视体育的视角。</p>
+        </details>
+        <details>
+            <summary>内容侧重哪些运动项目？</summary>
+            <p>涵盖球类、田径、户外、健身等常见类型，但更注重运动背后的习惯与场景，而非单纯的结果导向。具体内容会随不同主题而变化。</p>
+        </details>
+        <details>
+            <summary>适合完全没运动基础的人吗？</summary>
+            <p>适合。许多内容就是从“零基础”或“偶尔动一动”的角度出发的。运动并不是只有专业赛道，日常生活里的活动同样值得被认真对待。</p>
+        </details>
+    </div>
+
+    <!-- 自然嵌入的链接，不使用入口/点击等词 -->
+    <div style="margin: 1.8rem 0 0 0; font-size: 0.95rem; color: #57504a; line-height: 1.7;">
+        <p>如果你对体育内容有更多兴趣，无论是想了解训练思路、运动文化还是项目背景，<a href="https://zh-cns-sports.com" class="inline-link">mk体育</a> 提供了一种翻阅的可能。它不是一个必须抵达的终点，而更像一扇可以随时推开的门——门后是运动原本的样子。</p>
+    </div>
+
+    <div class="foot-note">
+        <span>· 保持平稳 · 保持好奇 ·</span>
+    </div>
+</div>
+</body>
+</html>
