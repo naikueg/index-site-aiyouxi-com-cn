@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mk体育 · 简明指南与产品说明</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f9fafc;
+            color: #1e1f22;
+            line-height: 1.7;
+        }
+        /* ——— 深色头图区 ——— */
+        .hero {
+            background: linear-gradient(145deg, #0c0e13 0%, #1b1f2b 100%);
+            color: #edf0f5;
+            padding: 4rem 2rem 3.2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: -20%;
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(circle at 30% 50%, rgba(66, 133, 244, 0.12), transparent 70%);
+            pointer-events: none;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.8rem;
+            position: relative;
+            z-index: 1;
+        }
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: #b7c0d0;
+            position: relative;
+            z-index: 1;
+        }
+        .hero .tagline {
+            display: inline-block;
+            margin-top: 1.6rem;
+            padding: 0.35rem 1.2rem;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #b9c3da;
+            letter-spacing: 0.3px;
+            background: rgba(255,255,255,0.03);
+        }
+        /* ——— 正文浅色区域 ——— */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2.8rem 2rem 4rem;
+        }
+        section {
+            margin-bottom: 3rem;
+        }
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            border-left: 4px solid #2b6bff;
+            padding-left: 1rem;
+            color: #101218;
+        }
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin: 1.6rem 0 0.6rem;
+            color: #20243a;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.5rem 1.2rem;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.04);
+            border: 1px solid #e8ecf1;
+            transition: all 0.15s ease;
+        }
+        .card:hover {
+            border-color: #c9d2e0;
+            box-shadow: 0 8px 20px rgba(0, 20, 60, 0.06);
+        }
+        .card .emoji-badge {
+            font-size: 1.8rem;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+        .card h4 {
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+        .card p {
+            color: #3b3f4e;
+            font-size: 0.95rem;
+        }
+        a {
+            color: #2b6bff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border 0.2s, color 0.1s;
+            font-weight: 460;
+        }
+        a:hover {
+            border-bottom: 1px solid #2b6bff;
+            color: #0f4bcf;
+        }
+        .faq-item {
+            margin-bottom: 1.2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #dce1e9;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+            color: #1b2030;
+        }
+        .faq-answer {
+            color: #3b4052;
+            font-size: 0.96rem;
+        }
+        .tip-box {
+            background: #f2f5fe;
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.8rem 0;
+            border-left: 4px solid #2b6bff;
+        }
+        .tip-box p {
+            margin: 0.2rem 0;
+        }
+        .divider {
+            width: 50px;
+            height: 3px;
+            background: #2b6bff;
+            border-radius: 4px;
+            margin: 1.2rem 0 0.6rem;
+        }
+        .trust-note {
+            background: #fff;
+            border: 1px solid #e2e7ef;
+            border-radius: 18px;
+            padding: 1.2rem 1.6rem;
+            font-size: 0.95rem;
+            color: #3d4255;
+        }
+        .trust-note strong {
+            color: #1a1f2e;
+        }
+        .highlight-link {
+            background: #f5f7fc;
+            padding: 0 0.2rem;
+            border-radius: 4px;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #72788b;
+            padding: 2rem 0 0.5rem;
+            border-top: 1px solid #e0e5ed;
+            margin-top: 1rem;
+        }
+        @media (max-width: 600px) {
+            .hero { padding: 2.4rem 1.2rem 2.2rem; }
+            .hero h1 { font-size: 2rem; }
+            .container { padding: 1.8rem 1rem 3rem; }
+            h2 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <h1>mk体育 · 信息框架</h1>
+    <p>从内容聚合到访问习惯——一份关于 mk体育 的使用指南与提醒。</p>
+    <span class="tagline">简明 · 务实 · 知识向</span>
+</header>
+
+<main class="container">
+
+    <!-- 摘要 -->
+    <section>
+        <h2>产品摘要</h2>
+        <p style="font-size:1.05rem;">
+            <a href="https://news-mksports.com" style="font-weight:500;">mk体育</a> 定位为体育资讯与数据聚合平台，覆盖主流赛事、实时比分、队伍动态与深度观察。其界面设计强调信息密度与导航效率，适合有固定浏览习惯的体育关注者。以下内容围绕功能亮点、建议使用场景以及访问时需留意的细节展开，帮助新用户快速建立清晰预期。
+        </p>
+        <div class="divider"></div>
+    </section>
+
+    <!-- 亮点卡片 -->
+    <section>
+        <h2>功能亮点</h2>
+        <div class="card-grid">
+            <div class="card">
+                <span class="emoji-badge">⚙️</span>
+                <h4>多赛事速览</h4>
+                <p>足球、篮球、网球等主流联赛的实时比分与赛程集中呈现，减少页面跳转频率。</p>
+            </div>
+            <div class="card">
+                <span class="emoji-badge">📋</span>
+                <h4>资讯结构化</h4>
+                <p>短讯、战报、分析按时间线排列，兼顾快速阅读与信息深度，方便回溯关键节点。</p>
+            </div>
+            <div class="card">
+                <span class="emoji-badge">🔍</span>
+                <h4>数据入口</h4>
+                <p>提供联赛积分榜、球队数据对比等基础工具，辅助用户自行判断趋势，而非直接给出结论。</p>
+            </div>
+            <div class="card">
+                <span class="emoji-badge">📱</span>
+                <h4>响应式适配</h4>
+                <p>移动端与桌面端布局均经过优化，尤其适合通勤、碎片时间快速查阅关键比分。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用建议 + 场景 -->
+    <section>
+        <h2>使用建议与典型场景</h2>
+        <p>根据平台现有内容结构，以下几种使用方式较为自然：</p>
+        <ul style="margin: 0.8rem 0 0.8rem 1.8rem; color: #2f3345;">
+            <li><strong>赛前速览</strong> —— 通过首页列表查看当日焦点赛事及开球时间，提前规划观看安排。</li>
+            <li><strong>赛中追踪</strong> —— 关注实时比分与关键事件（进球、红牌、结束等），适合无法观看直播时保持同步。</li>
+            <li><strong>赛后复盘</strong> —— 利用战报与技术统计回顾比赛进程，辅助个人分析或讨论。</li>
+            <li><strong>周期性浏览</strong> —— 每周固定时间查看联赛积分变化、射手榜等长期数据，形成自己的信息节奏。</li>
+        </ul>
+        <div class="tip-box">
+            <p><strong>💡 提示</strong> 初次使用时可先关注 2–3 个熟悉联赛，待适应信息密度后再逐步扩展关注范围，避免信息过载。</p>
+        </div>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section>
+        <h2>常见问题摘要</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">内容更新频率如何？</div>
+            <div class="faq-answer">重要赛事期间基本实时更新；日常时段保持每半小时至一小时轮播最新短讯与结果。具体时效受比赛进程及数据源影响。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">是否需要注册或登录？</div>
+            <div class="faq-answer">浏览基础资讯与比分无需账户。部分个性化功能（如收藏赛事、历史记录）需注册，详情可查阅平台说明。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">移动端体验如何？</div>
+            <div class="faq-answer">页面采用自适应设计，在主流手机浏览器上均可正常阅读。建议保持系统浏览器为最新版本以获得最佳渲染效果。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">数据来源是否可靠？</div>
+            <div class="faq-answer">平台聚合多家数据提供商与新闻源，但用户仍建议交叉核对关键信息（特别是比分、转会等动态数据），以养成审慎的信息习惯。</div>
+        </div>
+    </section>
+
+    <!-- 可信 · 克制的访问说明 -->
+    <section>
+        <h2>访问说明与建议</h2>
+        <div class="trust-note">
+            <p><strong>关于使用环境</strong> 建议在稳定的网络连接下访问 <a href="https://news-mksports.com">mk体育</a>，以获得完整的数据加载体验。公共 Wi-Fi 或网络受限区域可能出现部分资源延迟。</p>
+            <p style="margin-top:0.7rem;"><strong>关于信息判断</strong> 平台提供的数据与分析旨在辅助个人理解赛事，不构成任何形式的确定性建议。体育赛事存在不可预测因素，请理性看待所有预测性内容。</p>
+            <p style="margin-top:0.7rem;"><strong>关于隐私与cookies</strong> 与其他资讯网站类似，该平台可能使用 cookies 以改善浏览体验。如有顾虑，可在浏览器设置中调整隐私选项。</p>
+        </div>
+    </section>
+
+    <!-- 嵌入链接的自然句子示例（仅作展示，已在摘要段加入主要链接） -->
+    <p style="font-size:0.9rem; color:#545a6b; margin-top:1.2rem; border-top:1px solid #eaedf2; padding-top:1rem;">
+        ↳ 更多联赛数据与即时资讯，可围绕 <a href="https://news-mksports.com">mk体育</a> 的信息结构自行探索。页面内容仅代表客观介绍，不构成任何使用承诺。
+    </p>
+</main>
+
+<footer>
+    <p>本页为产品介绍页 · 2017–2025 · 内容仅供参考</p>
+</footer>
+
+</body>
+</html>
